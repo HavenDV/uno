@@ -1,0 +1,31 @@
+﻿<Page x:Class="UITests.Windows_UI_Xaml_Controls.CommandBar.CommandBarLine"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:android="http://nventive.com/android"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:ios="http://nventive.com/ios"
+      xmlns:local="using:UITests.Windows_UI_Xaml_Controls.CommandBar"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:xamarin="http://nventive.com/xamarin"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      mc:Ignorable="d xamarin ios android">
+
+    <Page.Resources>
+        <Style x:Name="NativeCommandBarStyle"
+               xamarin:BasedOn="{StaticResource NativeDefaultCommandBar}"
+               TargetType="CommandBar" />
+    </Page.Resources>
+
+    <Grid Background="Red">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <CommandBar x:Name="MyCommandBar"
+                    Background="Purple"
+                    Content="Test Content"
+                    Style="{StaticResource NativeCommandBarStyle}" />
+        <Grid Grid.Row="1"
+              Background="Purple" />
+    </Grid>
+</Page>
